@@ -1,31 +1,34 @@
 //
-//  ContentView.swift
+//  Lampara.view.swift
 //  JATZIRI BERENICE
 //
 //  Created by CEDAM09 on 12/04/23.
 //
 
+import Foundation
+
 import SwiftUI
 
 struct ContentView: View
 {
-    @State private var boton = false
+    @State private var lampara = true
     
     var body: some View
     {
         ZStack
         {
+            Color(.systemBlue)
+                .ignoresSafeArea()//fondo sea completamente azul
             VStack
             {
-                Button("ESTE ES TU PRIMER BOTON")
+                Button("este es un cambio de fondo")
                 {
-                    
-                    boton.toggle()//para boleanos camboia siu valor actiual por el opuesto
+                    lampara.toggle()//para boleanos cambia su valor actiual por el opuesto
                 }
             
             .buttonStyle(.bordered)//estilo de boton borde
             .foregroundColor(.black)
-            if boton
+            if lampara
             {
                 Text("Me gusta el azul")
                     .foregroundColor(.blue)
@@ -60,3 +63,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
